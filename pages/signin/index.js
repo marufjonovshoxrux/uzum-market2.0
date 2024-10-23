@@ -6,7 +6,7 @@ const form = document.forms.namedItem('signin')
 const email = document.querySelector('#email')
 
 const locale = JSON.parse(localStorage.getItem('user'))
-const users = await apiCall.getData('/users')
+const users = apiCall.getData('/users')
 
 email.value = locale.email
 

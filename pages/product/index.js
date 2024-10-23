@@ -6,7 +6,7 @@ import { reload } from '../../lib/utils.js'
 
 const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
 
-const products = await apiCall.getData('/products')
+const products = apiCall.getData('/products')
 const urlParams = new URLSearchParams(window.location.search)
 const productId = urlParams.get('id')
 
@@ -41,8 +41,8 @@ const sale_price = document.querySelector('.sale_price')
 const rasrochka = document.querySelector('.rassrochka')
 const add_basket = document.querySelector('.add_basket')
 
-if (productId) {
-	await apiCall.getData(`/products/${productId}/`).then(product => {
+if (productId)  {
+	apiCall.getData(`/products/${productId}/`).then(product => {
 		console.log(product)
 		title.innerHTML = product.title
 		name_product.innerHTML = product.title
@@ -127,7 +127,7 @@ if (productId) {
 			save_two_active.style.display = 'none'
 		}
 		likeSave(product.id)
-		async function likeSave(itemID) {
+		function likeSave(itemID) {
 			const things = JSON.parse(localStorage.getItem('things')) || []
 			const isLiked = things.some(e => e.id === itemID)
 

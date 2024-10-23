@@ -6,7 +6,7 @@ import { ApiCall } from './lib/http.request.js'
 
 
 const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
-const products = await apiCall.getData('/products')
+const products = apiCall.getData('/products')
 const data = products.slice(0, 10)
 const sale_products = products.slice(10, 20)
 const good_products = products.slice(20, 30)

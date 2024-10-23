@@ -4,7 +4,7 @@ import { ApiCall } from '../../lib/http.request.js'
 import { reload } from '../../lib/utils.js'
 
 const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
-const products2 = await apiCall.getData('/products')
+const products2 = apiCall.getData('/products')
 
 const box_thing = document.querySelector('.box_thing2')
 const header = document.querySelector('header')

@@ -5,7 +5,7 @@ import { ApiCall } from '../../lib/http.request.js'
 import { reload } from '../../lib/utils.js'
 
 const apiCall = new ApiCall(import.meta.env.VITE_BASE_URL)
-const products = await apiCall.getData('/products')
+const products = apiCall.getData('/products')
 const korzina = JSON.parse(localStorage.getItem('korzina')) || []
 
 const header = document.querySelector('header')

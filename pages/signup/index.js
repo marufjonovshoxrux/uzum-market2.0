@@ -20,7 +20,7 @@ form.onsubmit = async e => {
 		password: new FormData(form).get('password'),
 	}
 
-	const users = await apiCall.getData('/users?email=' + user.email)
+	const users = apiCall.getData('/users?email=' + user.email)
     
     
 	
@@ -31,7 +31,7 @@ form.onsubmit = async e => {
 		return 
 	}
 
-	const res = await apiCall.postData('/users', user)
+	const res = apiCall.postData('/users', user)
 
 	if (res.status !== 201) {
 		form.reset()
