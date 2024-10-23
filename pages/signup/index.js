@@ -31,7 +31,7 @@ form.onsubmit = async e => {
 		return 
 	}
 
-	const res = apiCall.postData('/users', user)
+	const res = await apiCall.postData('/users', user)
 
 	if (res.status !== 201) {
 		form.reset()
